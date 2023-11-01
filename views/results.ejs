@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap"
+      rel="stylesheet"
+    />
+    <title>Results</title>
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        font-family: "Montserrat", Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+
+      .container {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .logo {
+        width: 404px;
+        height: 170px;
+        margin-bottom: 1rem;
+      }
+
+      form div {
+        margin-bottom: 1rem;
+      }
+
+      button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Results:</h2>
+      <p>Total Consumption: <%= totalConsumption %> kWh</p>
+      <p>Total Carbon Intensity: <%= totalIntensityInKilograms %> kg</p>
+      <h3>Monthly % Fuel Mix:</h3>
+      <ul>
+        <% for (const fuel in monthlyFuelMixPerc) { %>
+        <li><%= fuel %>: <%= monthlyFuelMixPerc[fuel] %> %</li>
+        <% } %>
+      </ul>
+      <a href="/">Back</a>
+    </div>
+  </body>
+</html>
